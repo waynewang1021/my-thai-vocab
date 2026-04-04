@@ -1,0 +1,2400 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰語學習庫</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f6f9; font-family: -apple-system, sans-serif; }
+        .filter-section { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px); padding: 12px 0; border-bottom: 1px solid #eee; }
+        .word-card { 
+            cursor: pointer; transition: 0.2s; border: none; 
+            border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            background: white;
+        }
+        .word-card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .thai-text { font-size: 1.7rem; color: #d9534f; font-weight: bold; line-height: 1.2; }
+        .btn-filter { border-radius: 20px; padding: 5px 15px; font-size: 0.9rem; margin: 2px; }
+        .btn-filter.active { background-color: #d9534f !important; color: white !important; border-color: #d9534f !important; }
+        .date-badge { font-size: 0.75rem; color: #adb5bd; }
+        .cat-badge { font-size: 0.7rem; background: #e9ecef; color: #495057; padding: 3px 8px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="filter-section mb-4">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-center gap-1">
+                <button class="btn btn-sm btn-outline-secondary btn-filter active" onclick="filterCat('all', this)">全部 (122)</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('介詞', this)">介詞</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('副詞', this)">副詞</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('動詞', this)">動詞</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('名詞', this)">名詞</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('形容詞', this)">形容詞</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('搭配', this)">搭配</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('未分類', this)">未分類</button>
+                
+                <button class="btn btn-sm btn-outline-secondary btn-filter" onclick="filterCat('連接詞', this)">連接詞</button>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row g-3" id="wordContainer">
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('มีด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">มีด</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Meed</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>刀</strong></div>
+                        <div class="text-secondary small mb-2">Knife</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('แรงบันดาลใจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">แรงบันดาลใจ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Rang-bun-darn-jai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>啟發、動機</strong></div>
+                        <div class="text-secondary small mb-2">Inspiration</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('บวก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บวก</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Buak</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>加</strong></div>
+                        <div class="text-secondary small mb-2">Plus</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('อิทธิพล')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อิทธิพล</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">It-ti-pol</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>影響(中性/負面)</strong></div>
+                        <div class="text-secondary small mb-2">Influence</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ผลกระทบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ผลกระทบ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Pol-ga-tob</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>後果</strong></div>
+                        <div class="text-secondary small mb-2">Consequence</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ลบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลบ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Lob</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>減</strong></div>
+                        <div class="text-secondary small mb-2">Minus</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('บรรเทา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บรรเทา</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Bun-tao</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>減輕、緩解、紓解</strong></div>
+                        <div class="text-secondary small mb-2">To make things better</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('การบาดเจ็บ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">การบาดเจ็บ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Gaan-bàat-jèp</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>傷害</strong></div>
+                        <div class="text-secondary small mb-2">Injury</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-29</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('ไว / เร็ว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ไว / เร็ว</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Wai / Rew</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>快速的</strong></div>
+                        <div class="text-secondary small mb-2">Fast</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('ไหว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ไหว</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Wai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>有力氣去做某事</strong></div>
+                        <div class="text-secondary small mb-2">Have capability / energy to do sth.</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เดา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เดา</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Dao</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>猜</strong></div>
+                        <div class="text-secondary small mb-2">Guess</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้วโป้ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้วโป้ง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New-pong</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>大拇指</strong></div>
+                        <div class="text-secondary small mb-2">Thumb</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ดึง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ดึง</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Dueng</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>拉</strong></div>
+                        <div class="text-secondary small mb-2">Pull</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('อุบัติเหตุ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อุบัติเหตุ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">U-bud-ti-hed</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>意外</strong></div>
+                        <div class="text-secondary small mb-2">Accident</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้วก้อย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้วก้อย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New-goi</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>小指</strong></div>
+                        <div class="text-secondary small mb-2">Little Finger</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ถอด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ถอด</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Tord</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>脱（衣服）</strong></div>
+                        <div class="text-secondary small mb-2">Take off the clothes</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ผลัก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ผลัก</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Pluk</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>推</strong></div>
+                        <div class="text-secondary small mb-2">Push</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้วชี้')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้วชี้</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New-chee</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>食指</strong></div>
+                        <div class="text-secondary small mb-2">Pointy Finger</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ล้าง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ล้าง</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Lang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>洗</strong></div>
+                        <div class="text-secondary small mb-2">Wash</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้วกลาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้วกลาง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New-glang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>中指</strong></div>
+                        <div class="text-secondary small mb-2">Middle Finger</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้วนาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้วนาง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New-nang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>無名指</strong></div>
+                        <div class="text-secondary small mb-2">Ring Finger</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-22</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ซอง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ซอง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Song</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>信封/紅包袋</strong></div>
+                        <div class="text-secondary small mb-2">Envelope</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ประทับใจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ประทับใจ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Pra-tub-jai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>使人有印象</strong></div>
+                        <div class="text-secondary small mb-2">Impress</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('วางมือของคุณบนขา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">วางมือของคุณบนขา</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Wang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>把你的手放在腳上</strong></div>
+                        <div class="text-secondary small mb-2">Place your hand on your leg</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ยืน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ยืน</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Yuen</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>站</strong></div>
+                        <div class="text-secondary small mb-2">Stand</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ร่างกาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ร่างกาย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Rang-gai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>身體</strong></div>
+                        <div class="text-secondary small mb-2">Body</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('เพื่อนร่วมงาน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เพื่อนร่วมงาน</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Puen-ruam-ngan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>同事</strong></div>
+                        <div class="text-secondary small mb-2">Collegues</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('3 อันดับแรก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">3 อันดับแรก</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Sam-an-dub-raek</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>排名前三</strong></div>
+                        <div class="text-secondary small mb-2">Top 3</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('ลุกขึ้นนั่ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลุกขึ้นนั่ง</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Look-kuen-nang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>坐起來</strong></div>
+                        <div class="text-secondary small mb-2">Move your body from lying to sitting up (Please sit right up)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-03-15</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ป้องกัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ป้องกัน</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">bòong-gan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>預防、防止</strong></div>
+                        <div class="text-secondary small mb-2">Prevent</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('สาขา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">สาขา</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">sǎa-khǎa</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>分店、分支</strong></div>
+                        <div class="text-secondary small mb-2">Branch</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('สมัคร')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">สมัคร</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">sa-màk</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>報名、註冊</strong></div>
+                        <div class="text-secondary small mb-2">Register</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('ได้เปรียบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ได้เปรียบ</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">dâi-prìap</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>佔優勢/有優勢</strong></div>
+                        <div class="text-secondary small mb-2">Have advantage</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('เสียเปรียบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เสียเปรียบ</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">sǐa-prìap</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>吃虧/處於劣勢</strong></div>
+                        <div class="text-secondary small mb-2">Have disadvantage</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('งง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">งง</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ngong</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>困惑、懵逼</strong></div>
+                        <div class="text-secondary small mb-2">Confused</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เสีย / เน่า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เสีย / เน่า</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Sia / Nao</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>腐爛、臭、爛</strong></div>
+                        <div class="text-secondary small mb-2">Rotten</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('แผนก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">แผนก</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">pà-nàāek</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>部門</strong></div>
+                        <div class="text-secondary small mb-2">Department</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('หมอดู')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">หมอดู</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">mɔɔ-duu</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>算命師</strong></div>
+                        <div class="text-secondary small mb-2">Fortuneteller</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('นอกเหนือจาก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นอกเหนือจาก</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">nôk nǔua jàak</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>超出、除了...之外</strong></div>
+                        <div class="text-secondary small mb-2">Apart from, More than</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('ง่วง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ง่วง</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Nguang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>睏、想睡的</strong></div>
+                        <div class="text-secondary small mb-2">Sleepy</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('จับฉลาก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">จับฉลาก</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">jàp chà-làak</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>抽籤/交換禮物</strong></div>
+                        <div class="text-secondary small mb-2">Lucky draw</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เสีย / พัง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เสีย / พัง</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Sia (Mechanics / Electrical) / pang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>壞了/故障</strong></div>
+                        <div class="text-secondary small mb-2">Broken</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เปรียบเทียบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เปรียบเทียบ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Prieb-tieb</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>比較</strong></div>
+                        <div class="text-secondary small mb-2">Compare</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ความเครียด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ความเครียด</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">khwaam-krîiat</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>壓力</strong></div>
+                        <div class="text-secondary small mb-2">Stress (n.)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('การสื่อสาร')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">การสื่อสาร</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Gaan-sue-saan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>溝通</strong></div>
+                        <div class="text-secondary small mb-2">Communication</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('การศึกษา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">การศึกษา</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Gaan-Suk-sa</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>教育</strong></div>
+                        <div class="text-secondary small mb-2">Education</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ตั้งใจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ตั้งใจ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">dtâng jai + Verb</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>專心/認真/打算</strong></div>
+                        <div class="text-secondary small mb-2">Pay attention to ...</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เกลียด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เกลียด</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">gliât</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>討厭</strong></div>
+                        <div class="text-secondary small mb-2">Hate</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('แรงกดดัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">แรงกดดัน</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">raeng-kot-dan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>壓力、壓迫</strong></div>
+                        <div class="text-secondary small mb-2">Pressure</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ชื่อเสียง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ชื่อเสียง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">chʉ̂ʉ-sǐiang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>名聲</strong></div>
+                        <div class="text-secondary small mb-2">Reputation</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('มุมมอง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">มุมมอง</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">mūm-mōrng</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>方面、觀點</strong></div>
+                        <div class="text-secondary small mb-2">Perspective</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('สะโพก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">สะโพก</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Sa-pok</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>髖部/臀部</strong></div>
+                        <div class="text-secondary small mb-2">Hip</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ก้น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ก้น</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">kon</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>屁股</strong></div>
+                        <div class="text-secondary small mb-2">Bottom</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ข้อเท้า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ข้อเท้า</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Khor-tao</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>踝</strong></div>
+                        <div class="text-secondary small mb-2">Ankle</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('จมูก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">จมูก</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ja-mook</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>鼻子</strong></div>
+                        <div class="text-secondary small mb-2">Nose</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ข้อศอก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ข้อศอก</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Khor-sok</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>肘</strong></div>
+                        <div class="text-secondary small mb-2">Elbow</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('สำลัก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">สำลัก</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Sam-luk</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>嗆到、窒息 </strong></div>
+                        <div class="text-secondary small mb-2">Choke</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('รอบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">รอบ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Rob</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>圈/周圍</strong></div>
+                        <div class="text-secondary small mb-2">Round</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้ว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้ว</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>手指</strong></div>
+                        <div class="text-secondary small mb-2">Fingers</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ข้อมือ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ข้อมือ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Khor-mue</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>腕</strong></div>
+                        <div class="text-secondary small mb-2">Wrist</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('แก้ม')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">แก้ม</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">gâem</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>臉頰</strong></div>
+                        <div class="text-secondary small mb-2">Cheek</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิ้วเท้า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิ้วเท้า</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">New-tao</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>腳趾</strong></div>
+                        <div class="text-secondary small mb-2">Toes</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ชง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ชง</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Chong</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>「沖泡」飲料</strong></div>
+                        <div class="text-secondary small mb-2">Make / Stir (the beverage)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ยก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ยก</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">yohk</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>舉</strong></div>
+                        <div class="text-secondary small mb-2">Raise (v.) Hold sth up</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('แปรงฟัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">แปรงฟัน</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">braeng-fan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>刷牙</strong></div>
+                        <div class="text-secondary small mb-2">Brush your teeth</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('น่อง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">น่อง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Nong</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>小腿</strong></div>
+                        <div class="text-secondary small mb-2">Calf</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('คาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">คาง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">khang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>下巴</strong></div>
+                        <div class="text-secondary small mb-2">Chin</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('เที่ยวรอบโลก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เที่ยวรอบโลก</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">tîeo rôp lôk</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>環遊世界</strong></div>
+                        <div class="text-secondary small mb-2">Travel around the world</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ไหล่')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ไหล่</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">lài</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>肩膀</strong></div>
+                        <div class="text-secondary small mb-2">Shoulder</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('กลืน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">กลืน</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">klūn</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>吞</strong></div>
+                        <div class="text-secondary small mb-2">Swallow</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('หู')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">หู</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">hǔu</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>耳朵</strong></div>
+                        <div class="text-secondary small mb-2">Ears</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('บีบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บีบ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Beeb</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>擠壓</strong></div>
+                        <div class="text-secondary small mb-2">Squeeze</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เลิก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เลิก</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Lerk</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>停止、放棄、分手</strong></div>
+                        <div class="text-secondary small mb-2">Stop</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ต้นขา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ต้นขา</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Dton-Kaa</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>大腿</strong></div>
+                        <div class="text-secondary small mb-2">Leg (Waist to knee)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-08</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ลูกคนโต')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลูกคนโต</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Luuk Khon Too</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>長子、長女或家中的老大</strong></div>
+                        <div class="text-secondary small mb-2">Oldest child</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('อย่างน้อย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อย่างน้อย</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">yàang-nóoi</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>至少</strong></div>
+                        <div class="text-secondary small mb-2">At least</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('มหาวิทยาลัย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">มหาวิทยาลัย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ma-ha-wit-ta-ya-lai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>大學</strong></div>
+                        <div class="text-secondary small mb-2">University</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เกษียณ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เกษียณ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">gà-sǐan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>退休</strong></div>
+                        <div class="text-secondary small mb-2">Retire</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('พี่ชาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">พี่ชาย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Phîi-chaai (shy)</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>哥哥</strong></div>
+                        <div class="text-secondary small mb-2">Big Brother</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เจอ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เจอ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Jer</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>遇見、經歷</strong></div>
+                        <div class="text-secondary small mb-2">Meet , Experience (v.)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="搭配">
+                <div class="card h-100 word-card" onclick="speak('ใน  อนาคต')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ใน  อนาคต</div>
+                            <span class="cat-badge">搭配</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Nai  a-na-khót </div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>在未來</strong></div>
+                        <div class="text-secondary small mb-2">In the future</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ดูแล')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ดูแล</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Doo-lae</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>照顧(人)</strong></div>
+                        <div class="text-secondary small mb-2">Take care + people</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ลูกคนเล็ก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลูกคนเล็ก</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">lûuk khon lék</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>最小的孩子</strong></div>
+                        <div class="text-secondary small mb-2">Youngest child</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('น้องสาว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">น้องสาว</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Nóng-sǎaw</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>妹妹</strong></div>
+                        <div class="text-secondary small mb-2">Little sister</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('กฎหมาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">กฎหมาย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">gòt-mǎai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>法律</strong></div>
+                        <div class="text-secondary small mb-2">Law</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('สุขภาพ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">สุขภาพ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">sùk-kà-pâap</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>健康</strong></div>
+                        <div class="text-secondary small mb-2">Health</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('น้องชาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">น้องชาย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Nóng-chaai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>弟弟</strong></div>
+                        <div class="text-secondary small mb-2">Little brother</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('รัฐบาล')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">รัฐบาล</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">rat-tha-ban</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>政府</strong></div>
+                        <div class="text-secondary small mb-2">Government</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ลูกชาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลูกชาย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">lôok chaai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>兒子</strong></div>
+                        <div class="text-secondary small mb-2">Son</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('รักษา + Things / Nouns')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">รักษา + Things / Nouns</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Rak-sa</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>治療、照顧、保持</strong></div>
+                        <div class="text-secondary small mb-2">Treat / Take care</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('พี่สาว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">พี่สาว</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Phîi-sǎaw</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>姊姊</strong></div>
+                        <div class="text-secondary small mb-2">Big sister</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ลูกคนกลาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลูกคนกลาง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">lûuk khon klaang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>中間的孩子</strong></div>
+                        <div class="text-secondary small mb-2">Middle child</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ลูกสาว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ลูกสาว</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">lôok sǎao</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>女兒</strong></div>
+                        <div class="text-secondary small mb-2">Daughter</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('อาชีพ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อาชีพ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">aa-chîip / Ngarn</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>職業</strong></div>
+                        <div class="text-secondary small mb-2">Occupation</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-02-01</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="連接詞">
+                <div class="card h-100 word-card" onclick="speak('ในที่สุด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ในที่สุด</div>
+                            <span class="cat-badge">連接詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">nai thîi sùt</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>終於、最後</strong></div>
+                        <div class="text-secondary small mb-2">Finally/in the end</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="介詞">
+                <div class="card h-100 word-card" onclick="speak('เพื่อ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เพื่อ</div>
+                            <span class="cat-badge">介詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Puer</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>為了～</strong></div>
+                        <div class="text-secondary small mb-2">For (objectives)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="副詞">
+                <div class="card h-100 word-card" onclick="speak('ค่อยๆ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ค่อยๆ</div>
+                            <span class="cat-badge">副詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Koi-koi</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>漸漸地、慢慢地</strong></div>
+                        <div class="text-secondary small mb-2">Gradually / Slowly</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="連接詞">
+                <div class="card h-100 word-card" onclick="speak('ถึงแม้ว่า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ถึงแม้ว่า</div>
+                            <span class="cat-badge">連接詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">těung mǎe wâa</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>雖然</strong></div>
+                        <div class="text-secondary small mb-2">Although</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('บางคน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บางคน</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Bang-kon</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>有些人</strong></div>
+                        <div class="text-secondary small mb-2">Someone</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="介詞">
+                <div class="card h-100 word-card" onclick="speak('ให้')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ให้</div>
+                            <span class="cat-badge">介詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Hai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>給</strong></div>
+                        <div class="text-secondary small mb-2">Give to / for (giving)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="連接詞">
+                <div class="card h-100 word-card" onclick="speak('ก็เลย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ก็เลย</div>
+                            <span class="cat-badge">連接詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">gôr-loei</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>所以、於是、因而</strong></div>
+                        <div class="text-secondary small mb-2">Then</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="介詞">
+                <div class="card h-100 word-card" onclick="speak('สำหรับ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">สำหรับ</div>
+                            <span class="cat-badge">介詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Sum-rub</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>對於～</strong></div>
+                        <div class="text-secondary small mb-2">For (formal)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('คนไข้')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">คนไข้</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Kon-kai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>病人</strong></div>
+                        <div class="text-secondary small mb-2">Patient (n.)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('บางอย่าง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บางอย่าง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Bang-yang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>某些事</strong></div>
+                        <div class="text-secondary small mb-2">Something</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('กรณี')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">กรณี</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">kòor-rá-nee</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>情況、案例、情形</strong></div>
+                        <div class="text-secondary small mb-2">Case (n.)</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="連接詞">
+                <div class="card h-100 word-card" onclick="speak('ยิ่ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ยิ่ง</div>
+                            <span class="cat-badge">連接詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ying</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>越～越～</strong></div>
+                        <div class="text-secondary small mb-2">More...</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="副詞">
+                <div class="card h-100 word-card" onclick="speak('บางครั้ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บางครั้ง</div>
+                            <span class="cat-badge">副詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">baang kráng</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>有時候</strong></div>
+                        <div class="text-secondary small mb-2">Sometimes</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="副詞">
+                <div class="card h-100 word-card" onclick="speak('ทีหลัง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ทีหลัง</div>
+                            <span class="cat-badge">副詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Tee-lang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>以後、後來</strong></div>
+                        <div class="text-secondary small mb-2">Later</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="連接詞">
+                <div class="card h-100 word-card" onclick="speak('โดยไม่เกี่ยวกับ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">โดยไม่เกี่ยวกับ</div>
+                            <span class="cat-badge">連接詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Doi-mai-giew-gub</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>無論</strong></div>
+                        <div class="text-secondary small mb-2">Regardless + N.</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('บางวัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">บางวัน</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Bang-wan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>某些天</strong></div>
+                        <div class="text-secondary small mb-2">Someday</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="連接詞">
+                <div class="card h-100 word-card" onclick="speak('ดังนั้น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ดังนั้น</div>
+                            <span class="cat-badge">連接詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">dhang-nan</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>因此、所以</strong></div>
+                        <div class="text-secondary small mb-2">So</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('อื่น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อื่น</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">ùen</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>其他的</strong></div>
+                        <div class="text-secondary small mb-2">Other</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('ระวัง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ระวัง</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ra-wang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>小心、注意</strong></div>
+                        <div class="text-secondary small mb-2">Be careful</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('อันตราย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อันตราย</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ann-ta-rai</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>危險的</strong></div>
+                        <div class="text-secondary small mb-2">Dangerous</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="動詞">
+                <div class="card h-100 word-card" onclick="speak('เหมือนจะ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เหมือนจะ</div>
+                            <span class="cat-badge">動詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">mǔean jà</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>好像、似乎</strong></div>
+                        <div class="text-secondary small mb-2">Seem</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('กิจกรรม')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">กิจกรรม</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Gìt-jà-gam</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>活動</strong></div>
+                        <div class="text-secondary small mb-2">Activity</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="介詞">
+                <div class="card h-100 word-card" onclick="speak('ระหว่าง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ระหว่าง</div>
+                            <span class="cat-badge">介詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Ra-waang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>在…之間</strong></div>
+                        <div class="text-secondary small mb-2">Between</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('เมือง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">เมือง</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">mueang/mʉ̄ang</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>城市、國家</strong></div>
+                        <div class="text-secondary small mb-2">City</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="形容詞">
+                <div class="card h-100 word-card" onclick="speak('อุ่น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">อุ่น</div>
+                            <span class="cat-badge">形容詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">Oon</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>溫暖、加熱</strong></div>
+                        <div class="text-secondary small mb-2">Warm</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('ธุรกิจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">ธุรกิจ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">thu-ra-gìt</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>商務、業務(最通用)</strong></div>
+                        <div class="text-secondary small mb-2">Business</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('นิสัย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">นิสัย</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">ní-săi</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>個性、性格、習慣</strong></div>
+                        <div class="text-secondary small mb-2">Personality</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 word-item" data-category="名詞">
+                <div class="card h-100 word-card" onclick="speak('กิจการ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div class="thai-text">กิจการ</div>
+                            <span class="cat-badge">名詞</span>
+                        </div>
+                        <div class="text-muted small mb-3" style="letter-spacing: 0.5px;">kìt-jà-</div>
+                        
+                        <div class="mb-1 text-dark" style="font-size: 1.05rem;"><strong>事業、業務、機構</strong></div>
+                        <div class="text-secondary small mb-2">Business</div>
+                        
+                        
+                        
+                        <div class="mt-3 date-badge text-end border-top pt-2">📅 2026-01-18</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function filterCat(cat, btn) {
+            document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const items = document.querySelectorAll('.word-item');
+            items.forEach(item => {
+                if (cat === 'all' || item.getAttribute('data-category') === cat) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function speak(text) {
+            window.speechSynthesis.cancel();
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'th-TH';
+            msg.rate = 0.9;
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</body>
+</html>
