@@ -1,0 +1,1867 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰語單字庫播放器</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f2f5; font-family: sans-serif; padding-top: 30px; }
+        .word-card { 
+            cursor: pointer; transition: 0.3s; border: none; 
+            border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .word-card:hover { transform: translateY(-5px); background-color: #fffbfa; }
+        .thai-text { font-size: 1.8rem; color: #d9534f; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container pb-5">
+        <h1 class="text-center mb-5">我的泰語單字庫</h1>
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เปรียบเทียบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เปรียบเทียบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Prieb-tieb</div>
+                        <div><strong>中：</strong>比較</div>
+                        <div><strong>英：</strong>Compare</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ในที่สุด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ในที่สุด</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">nai thîi sùt</div>
+                        <div><strong>中：</strong>終於、最後</div>
+                        <div><strong>英：</strong>Finally/in the end</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ความเครียด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ความเครียด</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">khwaam-krîiat</div>
+                        <div><strong>中：</strong>壓力</div>
+                        <div><strong>英：</strong>Stress (n.)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลูกคนโต')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลูกคนโต</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Luuk Khon Too</div>
+                        <div><strong>中：</strong>長子、長女或家中的老大</div>
+                        <div><strong>英：</strong>Oldest child</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อย่างน้อย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อย่างน้อย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">yàang-nóoi</div>
+                        <div><strong>中：</strong>至少</div>
+                        <div><strong>英：</strong>At least</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เพื่อ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เพื่อ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Puer</div>
+                        <div><strong>中：</strong>為了～</div>
+                        <div><strong>英：</strong>For (objectives)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อื่น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อื่น</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">ùen</div>
+                        <div><strong>中：</strong>其他的</div>
+                        <div><strong>英：</strong>Other</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('มหาวิทยาลัย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">มหาวิทยาลัย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ma-ha-wit-ta-ya-lai</div>
+                        <div><strong>中：</strong>大學</div>
+                        <div><strong>英：</strong>University</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ระวัง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ระวัง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ra-wang</div>
+                        <div><strong>中：</strong>小心、注意</div>
+                        <div><strong>英：</strong>Be careful</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อันตราย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อันตราย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ann-ta-rai</div>
+                        <div><strong>中：</strong>危險的</div>
+                        <div><strong>英：</strong>Dangerous</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('สะโพก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">สะโพก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Sa-pok</div>
+                        <div><strong>中：</strong>髖部/臀部</div>
+                        <div><strong>英：</strong>Hip</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เกษียณ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เกษียณ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">gà-sǐan</div>
+                        <div><strong>中：</strong>退休</div>
+                        <div><strong>英：</strong>Retire</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('พี่ชาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">พี่ชาย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Phîi-chaai (shy)</div>
+                        <div><strong>中：</strong>哥哥</div>
+                        <div><strong>英：</strong>Big Brother</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ป้องกัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ป้องกัน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">bòong-gan</div>
+                        <div><strong>中：</strong>預防、防止</div>
+                        <div><strong>英：</strong>Prevent</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('การสื่อสาร')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">การสื่อสาร</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Gaan-sue-saan</div>
+                        <div><strong>中：</strong>溝通</div>
+                        <div><strong>英：</strong>Communication</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ค่อยๆ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ค่อยๆ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Koi-koi</div>
+                        <div><strong>中：</strong>漸漸地、慢慢地</div>
+                        <div><strong>英：</strong>Gradually / Slowly</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ซอง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ซอง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Song</div>
+                        <div><strong>中：</strong>信封/紅包袋</div>
+                        <div><strong>英：</strong>Envelope</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ก้น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ก้น</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">kon</div>
+                        <div><strong>中：</strong>屁股</div>
+                        <div><strong>英：</strong>Bottom</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('สาขา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">สาขา</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">sǎa-khǎa</div>
+                        <div><strong>中：</strong>分店、分支</div>
+                        <div><strong>英：</strong>Branch</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ถึงแม้ว่า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ถึงแม้ว่า</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">těung mǎe wâa</div>
+                        <div><strong>中：</strong>雖然</div>
+                        <div><strong>英：</strong>Although</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ไว / เร็ว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ไว / เร็ว</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Wai / Rew</div>
+                        <div><strong>中：</strong>快速的</div>
+                        <div><strong>英：</strong>Fast</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('การศึกษา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">การศึกษา</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Gaan-Suk-sa</div>
+                        <div><strong>中：</strong>教育</div>
+                        <div><strong>英：</strong>Education</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เหมือนจะ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เหมือนจะ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">mǔean jà</div>
+                        <div><strong>中：</strong>好像、似乎</div>
+                        <div><strong>英：</strong>Seem</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ข้อเท้า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ข้อเท้า</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Khor-tao</div>
+                        <div><strong>中：</strong>踝</div>
+                        <div><strong>英：</strong>Ankle</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บางคน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บางคน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Bang-kon</div>
+                        <div><strong>中：</strong>有些人</div>
+                        <div><strong>英：</strong>Someone</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ไหว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ไหว</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Wai</div>
+                        <div><strong>中：</strong>有力氣去做某事</div>
+                        <div><strong>英：</strong>Have capability / energy to do sth.</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('สมัคร')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">สมัคร</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">sa-màk</div>
+                        <div><strong>中：</strong>報名、註冊</div>
+                        <div><strong>英：</strong>Register</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ให้')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ให้</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Hai</div>
+                        <div><strong>中：</strong>給</div>
+                        <div><strong>英：</strong>Give to / for (giving)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ได้เปรียบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ได้เปรียบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">dâi-prìap</div>
+                        <div><strong>中：</strong>佔優勢/有優勢</div>
+                        <div><strong>英：</strong>Have advantage</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('จมูก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">จมูก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ja-mook</div>
+                        <div><strong>中：</strong>鼻子</div>
+                        <div><strong>英：</strong>Nose</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ก็เลย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ก็เลย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">gôr-loei</div>
+                        <div><strong>中：</strong>所以、於是、因而</div>
+                        <div><strong>英：</strong>Then</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ข้อศอก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ข้อศอก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Khor-sok</div>
+                        <div><strong>中：</strong>肘</div>
+                        <div><strong>英：</strong>Elbow</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ประทับใจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ประทับใจ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Pra-tub-jai</div>
+                        <div><strong>中：</strong>使人有印象</div>
+                        <div><strong>英：</strong>Impress</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('สำลัก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">สำลัก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Sam-luk</div>
+                        <div><strong>中：</strong>嗆到、窒息 </div>
+                        <div><strong>英：</strong>Choke</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('รอบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">รอบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Rob</div>
+                        <div><strong>中：</strong>圈/周圍</div>
+                        <div><strong>英：</strong>Round</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('กิจกรรม')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">กิจกรรม</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Gìt-jà-gam</div>
+                        <div><strong>中：</strong>活動</div>
+                        <div><strong>英：</strong>Activity</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เสียเปรียบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เสียเปรียบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">sǐa-prìap</div>
+                        <div><strong>中：</strong>吃虧/處於劣勢</div>
+                        <div><strong>英：</strong>Have disadvantage</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้ว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้ว</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New</div>
+                        <div><strong>中：</strong>手指</div>
+                        <div><strong>英：</strong>Fingers</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('สำหรับ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">สำหรับ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Sum-rub</div>
+                        <div><strong>中：</strong>對於～</div>
+                        <div><strong>英：</strong>For (formal)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ข้อมือ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ข้อมือ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Khor-mue</div>
+                        <div><strong>中：</strong>腕</div>
+                        <div><strong>英：</strong>Wrist</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('แก้ม')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">แก้ม</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">gâem</div>
+                        <div><strong>中：</strong>臉頰</div>
+                        <div><strong>英：</strong>Cheek</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('คนไข้')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">คนไข้</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Kon-kai</div>
+                        <div><strong>中：</strong>病人</div>
+                        <div><strong>英：</strong>Patient (n.)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้วเท้า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้วเท้า</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New-tao</div>
+                        <div><strong>中：</strong>腳趾</div>
+                        <div><strong>英：</strong>Toes</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เจอ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เจอ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Jer</div>
+                        <div><strong>中：</strong>遇見、經歷</div>
+                        <div><strong>英：</strong>Meet , Experience (v.)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ใน  อนาคต')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ใน  อนาคต</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Nai  a-na-khót </div>
+                        <div><strong>中：</strong>在未來</div>
+                        <div><strong>英：</strong>In the future</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บางอย่าง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บางอย่าง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Bang-yang</div>
+                        <div><strong>中：</strong>某些事</div>
+                        <div><strong>英：</strong>Something</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ดูแล')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ดูแล</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Doo-lae</div>
+                        <div><strong>中：</strong>照顧(人)</div>
+                        <div><strong>英：</strong>Take care + people</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('กรณี')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">กรณี</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">kòor-rá-nee</div>
+                        <div><strong>中：</strong>情況、案例、情形</div>
+                        <div><strong>英：</strong>Case (n.)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('วางมือของคุณบนขา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">วางมือของคุณบนขา</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Wang</div>
+                        <div><strong>中：</strong>把你的手放在腳上</div>
+                        <div><strong>英：</strong>Place your hand on your leg</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ชง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ชง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Chong</div>
+                        <div><strong>中：</strong>「沖泡」飲料</div>
+                        <div><strong>英：</strong>Make / Stir (the beverage)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('งง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">งง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ngong</div>
+                        <div><strong>中：</strong>困惑、懵逼</div>
+                        <div><strong>英：</strong>Confused</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ยก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ยก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">yohk</div>
+                        <div><strong>中：</strong>舉</div>
+                        <div><strong>英：</strong>Raise (v.) Hold sth up</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('แปรงฟัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">แปรงฟัน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">braeng-fan</div>
+                        <div><strong>中：</strong>刷牙</div>
+                        <div><strong>英：</strong>Brush your teeth</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('น่อง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">น่อง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Nong</div>
+                        <div><strong>中：</strong>小腿</div>
+                        <div><strong>英：</strong>Calf</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ยิ่ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ยิ่ง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ying</div>
+                        <div><strong>中：</strong>越～越～</div>
+                        <div><strong>英：</strong>More...</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บางครั้ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บางครั้ง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">baang kráng</div>
+                        <div><strong>中：</strong>有時候</div>
+                        <div><strong>英：</strong>Sometimes</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ยืน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ยืน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Yuen</div>
+                        <div><strong>中：</strong>站</div>
+                        <div><strong>英：</strong>Stand</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ทีหลัง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ทีหลัง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Tee-lang</div>
+                        <div><strong>中：</strong>以後、後來</div>
+                        <div><strong>英：</strong>Later</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลูกคนเล็ก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลูกคนเล็ก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">lûuk khon lék</div>
+                        <div><strong>中：</strong>最小的孩子</div>
+                        <div><strong>英：</strong>Youngest child</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ระหว่าง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ระหว่าง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Ra-waang</div>
+                        <div><strong>中：</strong>在…之間</div>
+                        <div><strong>英：</strong>Between</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('คาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">คาง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">khang</div>
+                        <div><strong>中：</strong>下巴</div>
+                        <div><strong>英：</strong>Chin</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เสีย / เน่า')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เสีย / เน่า</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Sia / Nao</div>
+                        <div><strong>中：</strong>腐爛、臭、爛</div>
+                        <div><strong>英：</strong>Rotten</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ร่างกาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ร่างกาย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Rang-gai</div>
+                        <div><strong>中：</strong>身體</div>
+                        <div><strong>英：</strong>Body</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เที่ยวรอบโลก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เที่ยวรอบโลก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">tîeo rôp lôk</div>
+                        <div><strong>中：</strong>環遊世界</div>
+                        <div><strong>英：</strong>Travel around the world</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('น้องสาว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">น้องสาว</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Nóng-sǎaw</div>
+                        <div><strong>中：</strong>妹妹</div>
+                        <div><strong>英：</strong>Little sister</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ตั้งใจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ตั้งใจ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">dtâng jai + Verb</div>
+                        <div><strong>中：</strong>專心/認真/打算</div>
+                        <div><strong>英：</strong>Pay attention to ...</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('แผนก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">แผนก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">pà-nàāek</div>
+                        <div><strong>中：</strong>部門</div>
+                        <div><strong>英：</strong>Department</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ไหล่')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ไหล่</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">lài</div>
+                        <div><strong>中：</strong>肩膀</div>
+                        <div><strong>英：</strong>Shoulder</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('กฎหมาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">กฎหมาย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">gòt-mǎai</div>
+                        <div><strong>中：</strong>法律</div>
+                        <div><strong>英：</strong>Law</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('กลืน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">กลืน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">klūn</div>
+                        <div><strong>中：</strong>吞</div>
+                        <div><strong>英：</strong>Swallow</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('หู')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">หู</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">hǔu</div>
+                        <div><strong>中：</strong>耳朵</div>
+                        <div><strong>英：</strong>Ears</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('โดยไม่เกี่ยวกับ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">โดยไม่เกี่ยวกับ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Doi-mai-giew-gub</div>
+                        <div><strong>中：</strong>無論</div>
+                        <div><strong>英：</strong>Regardless + N.</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('หมอดู')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">หมอดู</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">mɔɔ-duu</div>
+                        <div><strong>中：</strong>算命師</div>
+                        <div><strong>英：</strong>Fortuneteller</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('สุขภาพ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">สุขภาพ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">sùk-kà-pâap</div>
+                        <div><strong>中：</strong>健康</div>
+                        <div><strong>英：</strong>Health</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นอกเหนือจาก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นอกเหนือจาก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">nôk nǔua jàak</div>
+                        <div><strong>中：</strong>超出、除了...之外</div>
+                        <div><strong>英：</strong>Apart from, More than</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เกลียด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เกลียด</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">gliât</div>
+                        <div><strong>中：</strong>討厭</div>
+                        <div><strong>英：</strong>Hate</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('น้องชาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">น้องชาย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Nóng-chaai</div>
+                        <div><strong>中：</strong>弟弟</div>
+                        <div><strong>英：</strong>Little brother</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ง่วง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ง่วง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Nguang</div>
+                        <div><strong>中：</strong>睏、想睡的</div>
+                        <div><strong>英：</strong>Sleepy</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เมือง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เมือง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">mueang/mʉ̄ang</div>
+                        <div><strong>中：</strong>城市、國家</div>
+                        <div><strong>英：</strong>City</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('รัฐบาล')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">รัฐบาล</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">rat-tha-ban</div>
+                        <div><strong>中：</strong>政府</div>
+                        <div><strong>英：</strong>Government</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อุ่น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อุ่น</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Oon</div>
+                        <div><strong>中：</strong>溫暖、加熱</div>
+                        <div><strong>英：</strong>Warm</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ธุรกิจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ธุรกิจ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">thu-ra-gìt</div>
+                        <div><strong>中：</strong>商務、業務(最通用)</div>
+                        <div><strong>英：</strong>Business</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิสัย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิสัย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">ní-săi</div>
+                        <div><strong>中：</strong>個性、性格、習慣</div>
+                        <div><strong>英：</strong>Personality</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลูกชาย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลูกชาย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">lôok chaai</div>
+                        <div><strong>中：</strong>兒子</div>
+                        <div><strong>英：</strong>Son</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('แรงกดดัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">แรงกดดัน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">raeng-kot-dan</div>
+                        <div><strong>中：</strong>壓力、壓迫</div>
+                        <div><strong>英：</strong>Pressure</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('จับฉลาก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">จับฉลาก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">jàp chà-làak</div>
+                        <div><strong>中：</strong>抽籤/交換禮物</div>
+                        <div><strong>英：</strong>Lucky draw</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เดา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เดา</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Dao</div>
+                        <div><strong>中：</strong>猜</div>
+                        <div><strong>英：</strong>Guess</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เพื่อนร่วมงาน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เพื่อนร่วมงาน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Puen-ruam-ngan</div>
+                        <div><strong>中：</strong>同事</div>
+                        <div><strong>英：</strong>Collegues</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('กิจการ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">กิจการ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">kìt-jà-</div>
+                        <div><strong>中：</strong>事業、業務、機構</div>
+                        <div><strong>英：</strong>Business</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('3 อันดับแรก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">3 อันดับแรก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Sam-an-dub-raek</div>
+                        <div><strong>中：</strong>排名前三</div>
+                        <div><strong>英：</strong>Top 3</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บีบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บีบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Beeb</div>
+                        <div><strong>中：</strong>擠壓</div>
+                        <div><strong>英：</strong>Squeeze</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('รักษา + Things / Nouns')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">รักษา + Things / Nouns</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Rak-sa</div>
+                        <div><strong>中：</strong>治療、照顧、保持</div>
+                        <div><strong>英：</strong>Treat / Take care</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('พี่สาว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">พี่สาว</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Phîi-sǎaw</div>
+                        <div><strong>中：</strong>姊姊</div>
+                        <div><strong>英：</strong>Big sister</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เลิก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เลิก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Lerk</div>
+                        <div><strong>中：</strong>停止、放棄、分手</div>
+                        <div><strong>英：</strong>Stop</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ชื่อเสียง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ชื่อเสียง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">chʉ̂ʉ-sǐiang</div>
+                        <div><strong>中：</strong>名聲</div>
+                        <div><strong>英：</strong>Reputation</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('เสีย / พัง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">เสีย / พัง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Sia (Mechanics / Electrical) / pang</div>
+                        <div><strong>中：</strong>壞了/故障</div>
+                        <div><strong>英：</strong>Broken</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('มุมมอง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">มุมมอง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">mūm-mōrng</div>
+                        <div><strong>中：</strong>方面、觀點</div>
+                        <div><strong>英：</strong>Perspective</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลูกคนกลาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลูกคนกลาง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">lûuk khon klaang</div>
+                        <div><strong>中：</strong>中間的孩子</div>
+                        <div><strong>英：</strong>Middle child</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ต้นขา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ต้นขา</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Dton-Kaa</div>
+                        <div><strong>中：</strong>大腿</div>
+                        <div><strong>英：</strong>Leg (Waist to knee)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลูกสาว')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลูกสาว</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">lôok sǎao</div>
+                        <div><strong>中：</strong>女兒</div>
+                        <div><strong>英：</strong>Daughter</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลุกขึ้นนั่ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลุกขึ้นนั่ง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Look-kuen-nang</div>
+                        <div><strong>中：</strong>坐起來</div>
+                        <div><strong>英：</strong>Move your body from lying to sitting up (Please sit right up)</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อาชีพ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อาชีพ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">aa-chîip / Ngarn</div>
+                        <div><strong>中：</strong>職業</div>
+                        <div><strong>英：</strong>Occupation</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บางวัน')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บางวัน</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Bang-wan</div>
+                        <div><strong>中：</strong>某些天</div>
+                        <div><strong>英：</strong>Someday</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ดังนั้น')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ดังนั้น</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">dhang-nan</div>
+                        <div><strong>中：</strong>因此、所以</div>
+                        <div><strong>英：</strong>So</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้วโป้ง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้วโป้ง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New-pong</div>
+                        <div><strong>中：</strong>大拇指</div>
+                        <div><strong>英：</strong>Thumb</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('มีด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">มีด</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Meed</div>
+                        <div><strong>中：</strong>刀</div>
+                        <div><strong>英：</strong>Knife</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('แรงบันดาลใจ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">แรงบันดาลใจ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Rang-bun-darn-jai</div>
+                        <div><strong>中：</strong>啟發、動機</div>
+                        <div><strong>英：</strong>Inspiration</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บวก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บวก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Buak</div>
+                        <div><strong>中：</strong>加</div>
+                        <div><strong>英：</strong>Plus</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ดึง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ดึง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Dueng</div>
+                        <div><strong>中：</strong>拉</div>
+                        <div><strong>英：</strong>Pull</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อุบัติเหตุ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อุบัติเหตุ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">U-bud-ti-hed</div>
+                        <div><strong>中：</strong>意外</div>
+                        <div><strong>英：</strong>Accident</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('อิทธิพล')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">อิทธิพล</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">It-ti-pol</div>
+                        <div><strong>中：</strong>影響(中性/負面)</div>
+                        <div><strong>英：</strong>Influence</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้วก้อย')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้วก้อย</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New-goi</div>
+                        <div><strong>中：</strong>小指</div>
+                        <div><strong>英：</strong>Little Finger</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ถอด')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ถอด</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Tord</div>
+                        <div><strong>中：</strong>脱（衣服）</div>
+                        <div><strong>英：</strong>Take off the clothes</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ผลกระทบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ผลกระทบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Pol-ga-tob</div>
+                        <div><strong>中：</strong>後果</div>
+                        <div><strong>英：</strong>Consequence</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ผลัก')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ผลัก</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Pluk</div>
+                        <div><strong>中：</strong>推</div>
+                        <div><strong>英：</strong>Push</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ลบ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ลบ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Lob</div>
+                        <div><strong>中：</strong>減</div>
+                        <div><strong>英：</strong>Minus</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้วชี้')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้วชี้</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New-chee</div>
+                        <div><strong>中：</strong>食指</div>
+                        <div><strong>英：</strong>Pointy Finger</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('ล้าง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">ล้าง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Lang</div>
+                        <div><strong>中：</strong>洗</div>
+                        <div><strong>英：</strong>Wash</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้วกลาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้วกลาง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New-glang</div>
+                        <div><strong>中：</strong>中指</div>
+                        <div><strong>英：</strong>Middle Finger</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('บรรเทา')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">บรรเทา</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Bun-tao</div>
+                        <div><strong>中：</strong>減輕、緩解、紓解</div>
+                        <div><strong>英：</strong>To make things better</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('การบาดเจ็บ')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">การบาดเจ็บ</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">Gaan-bàat-jèp</div>
+                        <div><strong>中：</strong>傷害</div>
+                        <div><strong>英：</strong>Injury</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 word-card" onclick="speak('นิ้วนาง')">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="thai-text">นิ้วนาง</div>
+                            <span class="badge bg-info text-dark"></span>
+                        </div>
+                        <div class="text-muted small mb-2">New-nang</div>
+                        <div><strong>中：</strong>無名指</div>
+                        <div><strong>英：</strong>Ring Finger</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function speak(text) {
+            window.speechSynthesis.cancel();
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'th-TH';
+            msg.rate = 0.9;
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</body>
+</html>
